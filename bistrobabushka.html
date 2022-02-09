@@ -4,86 +4,121 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Notable&display=swap"
+      rel="stylesheet"
+    />
     <!-- favikon -->
     <title>BISTRO BABUSHKA</title>
     <style>
-      section {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        grid-template-rows: repeat(3, 1fr);
-        grid-column-gap: 0px;
-        grid-row-gap: 0px;
-        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-      }
-      img {
-        max-width: 100%;
-        max-height: 200px;
-        max-width: 300px;
-        min-height: 200px;
-        min-width: 300px;
-      }
-      .container {
-        height: 200px;
-        position: relative;
-      }
-
-      .center {
-        margin: 0;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        -ms-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-      }
-      button {
-        background-color: white;
-        transition-duration: 0.5s;
-        margin: 1rem;
-        padding: 0.5rem;
-        font-size: 1rem;
-      }
-
-      button:hover {
-        background-color: rgb(128, 112, 82);
-      }
-
-      /* button:focus {
-        background-color: rgb(24, 23, 23);
-      } */
-
-      #modal {
-        display: none;
-        width: 100vw;
-        height: 100vw;
-        position: fixed;
-        background-color: black;
-        top: 0;
-        left: 0;
-      }
-
-      #modal article {
-        max-width: 900px;
-        margin: 2em auto;
-        background-color: white;
-      }
-      #header h1 {
-        color: black;
-      }
-      img {
-        border: solid rgb(139, 70, 4);
-      }
       body {
-        background-color: rgb(244, 248, 252);
-        padding: 5rem;
+        background-color: rgb(243, 243, 243);
+        padding: 2rem;
+        margin-left: 6rem;
       }
-      p {
-        font-size: 1rem;
+      @media (min-width: 150px) {
+        header h1 {
+          font-family: "Notable", sans-serif;
+          color: black;
+          text-align: center;
+          font-size: 4rem;
+        }
+        section {
+          display: grid;
+          grid-template-columns: repeat(5, 1fr);
+          grid-template-rows: repeat(3, 1fr);
+          grid-column-gap: 0px;
+          grid-row-gap: 0px;
+          grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        }
+        img {
+          max-width: 100%;
+          max-height: 200px;
+          max-width: 300px;
+          min-height: 200px;
+          min-width: 300px;
+        }
+        .container {
+          height: 200px;
+          position: relative;
+        }
+
+        .center {
+          margin: 0;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+        }
+        button {
+          background-color: white;
+          transition-duration: 0.5s;
+          margin: 0.5rem;
+          padding: 0.5rem;
+          font-size: 1rem;
+        }
+
+        button:hover {
+          background-color: rgb(226, 199, 199);
+        }
+
+        /* button:focus {
+              background-color: rgb(24, 23, 23);
+            } */
+
+        #modal {
+          display: none;
+          width: 100vw;
+          height: 100vw;
+          position: fixed;
+          background-color: black;
+          top: 0;
+          left: 0;
+          background-color: rgb(243, 243, 243);
+        }
+
+        #modal article {
+          max-width: 900px;
+          margin: 2rem;
+          background-color: rgb(243, 243, 243);
+        }
+
+        #modal p {
+          max-width: 40ch;
+          line-height: 1.5rem;
+        }
+        /* #modal img {
+              align-items: center;
+            } */
+
+        /* h2 {
+              font-family: "Notable", sans-serif;
+            } */
+
+        img {
+          border: solid rgb(226, 199, 199);
+        }
+
+        p {
+          font-size: 1rem;
+          max-width: 40ch;
+        }
+        footer {
+          text-align: center;
+          margin-top: 5rem;
+        }
       }
     </style>
   </head>
   <header>
     <!-- <img src="" alt="" /> -->
-    <h1>Babushka</h1>
+    <h1>Bistro Babushka</h1>
+
     <nav>
       <div class="container">
         <div class="center">
@@ -117,6 +152,10 @@
         </article>
       </template>
     </section>
+    <footer>
+      Adresse: Grønnegade 97 1234 København K Åbningstider: Mandag - Fredag
+      10.30-22 Lørdag 12-00 - 23.00
+    </footer>
     <script>
       const header = document.querySelector("header h1");
       const myHeaders = {
@@ -124,7 +163,6 @@
       };
 
       document.addEventListener("DOMContentLoaded", start);
-      // console.log("Line Berner");
       let retter;
       let filter = "alle";
       function start() {
@@ -149,9 +187,6 @@
         console.log("Retter", retter);
         visRetter();
       }
-      //   function vis(json) {
-      //     console.log(json);
-      //   }
 
       const dest = document.querySelector("#liste");
       const skabelon = document.querySelector("template").content;
