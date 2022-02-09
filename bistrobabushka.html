@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BISTRO BABUSHKA</title>
+    <style>
+      section {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      }
+      img {
+        max-width: 100%;
+      }
+      .container {
+        height: 200px;
+        position: relative;
+      }
+
+      .center {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+      }
+      button {
+        background-color: white;
+        transition-duration: 0.5s;
+        margin: 1rem;
+        padding: 0.5rem;
+        font-size: 1rem;
+      }
+
+      button:hover {
+        background-color: rgb(128, 112, 82);
+      }
+
+      button:focus {
+        background-color: black;
+      }
+
+      #modal {
+        display: none;
+        width: 100vw;
+        height: 100vw;
+        position: fixed;
+        background-color: black;
+        top: 0;
+        left: 0;
+      }
+
+      #modal article {
+        max-width: 900px;
+        margin: 2em auto;
+        background-color: white;
+      }
+      #header h1 {
+        color: black;
+      }
+    </style>
+  </head>
+  <header>
+    <img src="" alt="" />
+    <h1>Babushka</h1>
+    <nav>
+      <div class="container">
+        <div class="center">
+          <button data-kategori="alle" class="valgt">Alle</button>
+          <button data-kategori="forretter">Forretter</button>
+          <button data-kategori="hovedretter">Hovederetter</button>
+          <button data-kategori="desserter">Desserter</button>
+          <button data-kategori="drikkevarer">Drikkevarer</button>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <body>
+    <aside id="modal">
+      <article>
+        <h2 class="navn"></h2>
+        <h2 class="efternavn"></h2>
+        <img src="" alt="" class="profil-billede" />
+        <p class="kortbeskrivelse"></p>
+        <p class="pris"></p>
+      </article>
+    </aside>
+    <section id="liste">
+      <template>
+        <article>
+          <h2 class="navn"></h2>
+          <h2 class="efternavn"></h2>
+          <img src="" alt="" class="profil-billede" />
+          <p class="email"></p>
+          <p class="pris"></p>
+        </article>
+      </template>
+    </section>
+   
+    </script>
+  </body>
+</html>
